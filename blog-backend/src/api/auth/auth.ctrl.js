@@ -45,6 +45,13 @@ export const register = async (ctx) => {
     await user.save(); // DB에 저장
 
     ctx.body = user.serialize();
+
+    // 사용자 토큰을 쿠키에 담아서 사용
+    const token = user.generateToken();
+    ctx.cookies.set('access_token', token, {
+      maxAge: 1000 * 60 * 60 * 24 * 7, // 7일
+      httpOnly: true,
+    });
   } catch (e) {
     ctx.throw(500, e);
   }
@@ -54,7 +61,7 @@ export const register = async (ctx) => {
 로그인
   POST /api/auth/login
   {
-    username: 'velopert',
+    username: 'keemgeena',
     password: 'mypass123'
   }
 */
@@ -83,15 +90,38 @@ export const login = async (ctx) => {
       return;
     }
     ctx.body = user.serialize();
+
+    // 사용자 토큰을 쿠키에 담아서 사용
+    const token = user.generateToken();
+    ctx.cookies.set('access_token', token, {
+      maxAge: 1000 * 60 * 60 * 24 * 7, // 7일
+      httpOnly: true,
+    });
   } catch (e) {
     ctx.throw(500, e);
   }
 };
 
+/*
+로그인 상태 확인
+  GET /api/auth/check
+*/
 export const check = async (ctx) => {
-  // 로그인 상태 확인
+  const { user } = ctx.state;
+  if (!user) {
+    // 로그인 중이 아니면
+    ctx.status = 401; // Unauthorized
+    return;
+  }
+  ctx.body = user;
 };
 
+/*
+로그아웃
+  POST /api/auth/logout
+*/
 export const logout = async (ctx) => {
-  // 로그아웃
+  // 쿠키 지워주기
+  ctx.cookies.set('access_token');
+  ctx.status = 204; // No Content
 };
