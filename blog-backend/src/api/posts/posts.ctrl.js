@@ -57,9 +57,33 @@ export const write = async (ctx) => {
   GET /api/posts
 */
 export const list = async (ctx) => {
+  // query는 문자열이기 때문에 숫자로 변환해 주어야 한다.
+  // 값이 주어지지 않았다면 1을 기본으로 사용한다.
+  const page = parseInt(ctx.query.page || '1', 10);
+
+  if (page < 1) {
+    ctx.status = 400;
+    return;
+  }
+
   try {
-    const posts = await Post.find().exec();
-    ctx.body = posts;
+    const posts = await Post.find()
+      .sort({ _id: -1 }) // 가장 최근에 작성된 포스트 순으로 정렬 (내림차순) / 1로 설정하면 오름차순
+      .limit(10) // 포스트 보여지는 개수 제한
+      .skip((page - 1) * 10) // 페이지 기능 구현
+      .lean() // 데이터를 처음부터 JSON 형태로 조회가 가능 .map(post => post.toJSON())
+      .exec();
+
+    // 마지막 페이지 번호 알려주기 (커스텀 헤더를 설정하는 방법)
+    const postCount = await Post.countDocuments().exec();
+    ctx.set('Last-Page', Math.ceil(postCount / 10));
+
+    // 내용 길이 제한
+    ctx.body = posts.map((post) => ({
+      ...post,
+      body:
+        post.body.lenght < 200 ? post.body : `${post.body.slice(0, 200)}...`,
+    }));
   } catch (e) {
     ctx.throw(500, e);
   }
