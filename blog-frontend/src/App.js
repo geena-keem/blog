@@ -12,8 +12,8 @@ const App = () => {
       <Route component={RegisterPage} path="/register" />
       <Route component={LoginPage} path="/login" />
       <Route component={WritePage} path="/write" />
-      <Route component={PostPage} path={['/@:username', '/']} exact />
-      <Route component={PostListPage} path="/@:username/:postId" />
+      <Route component={PostPage} path="/@:username/:postId" />
+      <Route component={PostListPage} path={['/@:username', '/']} exact />
     </>
   );
 };
