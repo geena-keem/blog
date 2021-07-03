@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { allowUnknownOption } from '../../node_modules/commander/typings/index';
+import { all } from 'redux-saga/effects';
 import auth, { authSaga } from './auth';
 import loading from './loading';
 
@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
 });
 
 export function* rootSaga() {
-  yield allowUnknownOption([authSaga()]);
+  yield all([authSaga()]);
 }
 
 export default rootReducer;
