@@ -56,7 +56,15 @@ const textMap = {
   register: 'REGISTER',
 };
 
-const AuthForm = ({ type, form, onChange, onSubmit }) => {
+// 에러 표시
+const ErrorMessage = styled.div`
+  color: ${palette.red[9]};
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+`;
+
+const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
   const text = textMap[type];
 
   return (
@@ -88,6 +96,7 @@ const AuthForm = ({ type, form, onChange, onSubmit }) => {
             value={form.passwordConfirm}
           />
         )}
+        {error && <ErrorMessage>{error}</ErrorMessage>}
         <ButtonWidthMarginTop orange fullWidth styled={{ marginTop: '1rem' }}>
           {text}
         </ButtonWidthMarginTop>
