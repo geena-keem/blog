@@ -9,7 +9,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   letter-spacing: 2px;
 
-  background-color: ${palette.orange[1]};
+  background-color: ${palette.orange[0]};
   &:hover {
     /* color: ${palette.orange[1]}; */
     color: white;
