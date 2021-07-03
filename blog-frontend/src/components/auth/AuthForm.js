@@ -17,6 +17,7 @@ const AuthFormBlock = styled.div`
 
 // 스타일링된 input
 const StyledInput = styled.input`
+  color: ${palette.red[7]};
   font-size: 0.8rem;
   border: none;
   border-bottom: 1px solid ${palette.red[7]};
@@ -55,19 +56,27 @@ const textMap = {
   register: 'REGISTER',
 };
 
-const AuthForm = ({ type }) => {
+const AuthForm = ({ type, form, onChange, onSubmit }) => {
   const text = textMap[type];
 
   return (
     <AuthFormBlock>
       <h4>{text}</h4>
-      <form>
-        <StyledInput autoComplete="username" name="username" placeholder="ID" />
+      <form onSubmit={onSubmit}>
+        <StyledInput
+          autoComplete="username"
+          name="username"
+          placeholder="ID"
+          onChange={onChange}
+          value={form.username}
+        />
         <StyledInput
           autoComplete="new-password"
           name="password"
           placeholder="PASSWORD"
           type="password"
+          onChange={onChange}
+          value={form.password}
         />
         {type === 'register' && (
           <StyledInput
@@ -75,6 +84,8 @@ const AuthForm = ({ type }) => {
             name="passwordConfirm"
             placeholder="PASSWORD CHECK"
             type="password"
+            onChange={onChange}
+            value={form.passwordConfirm}
           />
         )}
         <ButtonWidthMarginTop orange fullWidth styled={{ marginTop: '1rem' }}>
