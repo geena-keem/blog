@@ -15,8 +15,19 @@ export const tempSetUser = createAction(TEMP_SET_USER, (user) => user);
 export const check = createAction(CHECK);
 
 const checkSaga = createRequestSaga(CHECK, authAPI.check);
+
+// 로그인 정보가 만료되었을 때를 대비하여 사용자 정보를 초기화 하는 작업
+function checkFailureSaga() {
+  try {
+    localStorage.removeItem('user'); // localStorage에서 user를 제거
+  } catch (e) {
+    console.log('localStorage is not working');
+  }
+}
+
 export function* userSaga() {
   yield takeLatest(CHECK, checkSaga);
+  yield takeLatest(CHECK_FAILURE, checkFailureSaga);
 }
 
 const initialState = {

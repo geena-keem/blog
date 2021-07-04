@@ -48,7 +48,13 @@ const Spacer = styled.div`
   height: 5rem;
 `;
 
-const Header = () => {
+// 로그아웃 버튼
+const UserInfo = styled.div`
+  color: ${palette.orange[1]};
+  margin-right: 1rem;
+`;
+
+const Header = ({ user }) => {
   return (
     <>
       <HeaderBlock>
@@ -56,11 +62,18 @@ const Header = () => {
           <Link to="/" className="logo">
             BLOG
           </Link>
-          <div className="right">
-            <Button to="/login" className="button">
-              LOGIN
-            </Button>
-          </div>
+          {user ? (
+            <div className="right">
+              <UserInfo>{user.username}</UserInfo>
+              <Button className="button">LOGOUT</Button>
+            </div>
+          ) : (
+            <div className="right">
+              <Button to="/login" className="button">
+                LOGIN
+              </Button>
+            </div>
+          )}
         </Wrapper>
       </HeaderBlock>
       <Spacer />
