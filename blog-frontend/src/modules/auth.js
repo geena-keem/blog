@@ -13,7 +13,7 @@ const [REGISTER, REGISTER_SUCCESS, REGISTER_FAILURE] =
   createRequestActionTypes('auth/REGISTER');
 
 const [LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE] =
-  createRequestActionTypes('aut/LOGIN');
+  createRequestActionTypes('auth/LOGIN');
 
 export const changeField = createAction(
   CHANGE_FIELD,
