@@ -4,8 +4,8 @@ import palette from '../../lib/styles/palette';
 
 const TagBoxBlock = styled.div`
   width: 100%;
-  border-top: 2px solid ${palette.red[7]};
-  padding-top: 2rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
 
   p {
     color: ${palette.red[7]};
@@ -64,6 +64,7 @@ const Tag = styled.div`
 `;
 
 const TagListBlock = styled.div`
+  position: fixed;
   display: flex;
   margin-top: 0.5rem;
 `;

@@ -8,7 +8,8 @@ import Responsive from '../common/Responsive';
 const EditorBlock = styled(Responsive)`
   /* 페이지 위아래 여백 지정 */
   padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid ${palette.red[7]};
 `;
 
 const TitleInput = styled.input`
@@ -28,6 +29,7 @@ const TitleInput = styled.input`
 
 const QuillWrapper = styled.div`
   color: ${palette.red[7]};
+  height: 350px;
 
   /* 최소 크기 지정 및 padding 제거 */
   .ql-editor {
@@ -36,10 +38,16 @@ const QuillWrapper = styled.div`
     font-size: 1.125rem;
     line-height: 1.5;
   }
+
   .ql-editor.ql-blank::before {
     left: 0px;
     color: ${palette.red[4]};
     font-style: normal;
+  }
+
+  // 스크롤바 숨기기
+  .ql-editor::-webkit-scrollbar {
+    display: none;
   }
 `;
 
