@@ -69,7 +69,7 @@ const TagListBlock = styled.div`
 `;
 
 // React.memo를 사용하여 tag 값이 바뀔 때만 리렌더링되도록 처리
-// Hook을 사용하여 태그 추가/삭제 구현
+// Hooks를 사용하여 태그 추가/삭제 구현
 const TagItem = React.memo(({ tag, onRemove }) => (
   <Tag onClick={() => onRemove(tag)}>#{tag}</Tag> // 태그 클릭 시 삭제
 ));
