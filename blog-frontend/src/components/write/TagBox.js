@@ -11,7 +11,7 @@ const TagBoxBlock = styled.div`
     color: ${palette.red[7]};
     letter-spacing: 2px;
     margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -35,13 +35,12 @@ const TagForm = styled.form`
     flex: 1;
     min-width: 0;
     &::placeholder {
-      color: ${palette.red[4]};
+      color: ${palette.gray[6]};
     }
   }
 
   button {
-    /* color: ${palette.orange[1]}; */
-    color: white;
+    color: ${palette.orange[1]};
     background: ${palette.red[7]};
     cursor: pointer;
     padding-right: 1rem;
@@ -129,13 +128,9 @@ const TagBox = ({ tags, onChangeTags }) => {
 
   return (
     <TagBoxBlock>
-      <p>태그</p>
+      <p>TAG</p>
       <TagForm onSubmit={onSubmit}>
-        <input
-          placeholder="태그를 입력하세요"
-          value={input}
-          onChange={onChange}
-        />
+        <input placeholder="TAG" value={input} onChange={onChange} />
         <button type="submit">ADD</button>
       </TagForm>
       <TagList tags={localTags} onRemove={onRemove} />

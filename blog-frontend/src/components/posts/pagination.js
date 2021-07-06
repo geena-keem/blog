@@ -1,22 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../common/Button';
-// import palette from '../../lib/styles/palette';
 import qs from 'qs';
+import palette from '../../lib/styles/palette';
 
 const PaginationBlock = styled.div`
   width: 320px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  /* margin-bottom: 3rem; */
-
-  Button {
-    margin-bottom: 3rem;
-  }
+  margin-bottom: 3rem;
 `;
 
-const PageNumber = styled.div``;
+const PageNumber = styled.div`
+  color: ${palette.red[7]};
+`;
 
 const buildLink = ({ username, tag, page }) => {
   const query = qs.stringify({ tag, page });

@@ -23,7 +23,7 @@ const TitleInput = styled.input`
   margin-bottom: 2rem;
   width: 100%;
   &::placeholder {
-    color: ${palette.red[4]};
+    color: ${palette.gray[6]};
   }
 `;
 
@@ -41,7 +41,7 @@ const QuillWrapper = styled.div`
 
   .ql-editor.ql-blank::before {
     left: 0px;
-    color: ${palette.red[4]};
+    color: ${palette.gray[6]};
     font-style: normal;
   }
 
@@ -58,7 +58,7 @@ const Editor = ({ title, body, onChangeField }) => {
   useEffect(() => {
     quillInstance.current = new Quill(quillElement.current, {
       theme: 'bubble',
-      placeholder: '내용을 입력하세요',
+      placeholder: 'CONTENTS',
       modules: {
         toolbar: [
           [{ header: '1' }, { header: '2' }],
@@ -91,11 +91,7 @@ const Editor = ({ title, body, onChangeField }) => {
 
   return (
     <EditorBlock>
-      <TitleInput
-        placeholder="제목을 입력하세요"
-        onChange={onChangeTitle}
-        value={title}
-      />
+      <TitleInput placeholder="TITLE" onChange={onChangeTitle} value={title} />
       <QuillWrapper>
         <div ref={quillElement} />
       </QuillWrapper>

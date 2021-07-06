@@ -9,6 +9,7 @@ import Tags from '../common/Tags';
 
 const PostListBlock = styled(Responsive)`
   margin-top: 3rem;
+  margin-bottom: 3rem;
 `;
 
 const WritePostButtonWrapper = styled.div`
@@ -32,8 +33,8 @@ const PostItemBlock = styled.div`
 
   h2 {
     color: ${palette.red[7]};
-    font-size: 2rem;
-    margin-bottom: 0;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     margin-top: 0;
     &:hover {
       opacity: 0.5;
@@ -41,6 +42,7 @@ const PostItemBlock = styled.div`
   }
 
   p {
+    color: ${palette.red[7]};
     margin-top: 2rem;
   }
 `;
@@ -51,14 +53,16 @@ const PostItem = ({ post }) => {
   return (
     <PostItemBlock>
       <h2>
-        <Link to={`/@${user.username}/${_id}`}>{title}</Link>
+        "<Link to={`/@${user.username}/${_id}`}>{title}"</Link>
       </h2>
       <SubInfo
         username={user.username}
         publishedDate={new Date(publishedDate)}
       />
       <Tags tags={tags} />
-      <p>{body}</p>
+      <p>
+        <b>|</b> {body}
+      </p>
     </PostItemBlock>
   );
 };

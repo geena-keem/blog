@@ -10,10 +10,9 @@ const buttonStyle = css`
   cursor: pointer;
   letter-spacing: 2px;
 
-  background-color: ${palette.orange[0]};
+  background-color: ${palette.orange[1]};
   &:hover {
-    /* color: ${palette.orange[1]}; */
-    color: white;
+    color: ${palette.orange[1]};
     background: ${palette.red[7]};
   }
 
@@ -30,7 +29,7 @@ const buttonStyle = css`
     css`
       background: ${palette.orange[1]};
       &:hover {
-        color: white;
+        color: ${palette.orange[1]};
         background: ${palette.red[7]};
       }
     `}

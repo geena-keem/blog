@@ -7,13 +7,14 @@ import { Link } from 'react-router-dom';
 
 const HeaderBlock = styled.div`
   position: fixed;
+  top: 0;
   width: 100%;
   background: ${palette.red[7]};
 `;
 
 // Responsive 컴포넌트의 속성에 스타일을 추가해서 새로운 컴포넌트 생성
 const Wrapper = styled(Responsive)`
-  height: 5rem;
+  height: 6rem;
   display: flex;
   align-items: center;
 
@@ -21,9 +22,10 @@ const Wrapper = styled(Responsive)`
 
   .logo {
     color: ${palette.orange[1]};
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     letter-spacing: 4px;
-    border: 8px double ${palette.orange[1]};
+    border-top: 1px solid ${palette.orange[1]};
+    border-bottom: 1px solid ${palette.orange[1]};
     padding: 4px 8px;
   }
 

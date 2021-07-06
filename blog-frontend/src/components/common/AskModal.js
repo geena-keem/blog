@@ -29,6 +29,7 @@ const AskModalBlock = styled.div`
   }
 
   p {
+    color: ${palette.red[7]};
     margin-bottom: 3rem;
   }
 

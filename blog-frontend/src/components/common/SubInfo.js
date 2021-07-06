@@ -10,7 +10,7 @@ const SubInfoBlock = styled.div`
       margin-top: 1rem;
     `}
 
-  color: ${palette.red[5]};
+  color: ${palette.red[7]};
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 
