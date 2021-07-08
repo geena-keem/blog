@@ -28,7 +28,7 @@ const palette = {
     '#c92a2a',
   ],
   pink: [
-    '#fff0f6',
+    '#eeebec',
     '#ffdeeb',
     '#fcc2d7',
     '#faa2c1',
@@ -73,7 +73,8 @@ const palette = {
     '#4c6ef5',
     '#4263eb',
     '#3b5bdb',
-    '#364fc7',
+    '#2f3f91',
+    '#293570',
   ],
   blue: [
     '#e7f5ff',

@@ -15,7 +15,7 @@ const WriteActionButtonsBlock = styled.div`
 
 // TagBox에서 사용하는 버튼과 일하는 높이로 설정한 후 서로 간의 여백 지정
 const StyledButton = styled(Button)`
-  background-color: ${palette.orange[1]};
+  background-color: ${palette.orange[4]};
   text-align: center;
   height: 2.125rem;
   & + & {
@@ -26,7 +26,7 @@ const StyledButton = styled(Button)`
 const WriteActionButtons = ({ onCancel, onPublish, isEdit }) => {
   return (
     <WriteActionButtonsBlock>
-      <StyledButton orange onClick={onPublish}>
+      <StyledButton indigo onClick={onPublish}>
         POST {isEdit ? 'MOD' : ''}
       </StyledButton>
       <StyledButton onClick={onCancel}>CANCEL</StyledButton>

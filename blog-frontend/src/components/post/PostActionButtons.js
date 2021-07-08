@@ -12,16 +12,16 @@ const PostActionButtonsBlock = styled.div`
 
 const ActionsButton = styled.button`
   padding: 0.25rem 0.5rem;
-  color: ${palette.red[7]};
-  background-color: ${palette.orange[1]};
-  border: 1px solid ${palette.red[7]};
+  color: ${palette.indigo[10]};
+  background-color: ${palette.orange[4]};
+  border: 1px solid ${palette.indigo[10]};
   font-size: 0.875rem;
   letter-spacing: 2px;
   cursor: pointer;
 
   &:hover {
-    color: ${palette.orange[0]};
-    background-color: ${palette.red[7]};
+    color: ${palette.orange[4]};
+    background-color: ${palette.indigo[10]};
   }
 
   & + & {

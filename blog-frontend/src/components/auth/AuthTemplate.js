@@ -23,18 +23,24 @@ const AuthTemplateBlock = styled.div`
 // 박스
 const WhiteBox = styled.div`
   .logo-area {
-    color: ${palette.red[7]};
+    color: ${palette.orange[4]};
     display: block;
     padding-bottom: 2rem;
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     /* font-weight: bold; */
     letter-spacing: 4px;
+
+    span {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: ${palette.indigo[10]};
+    }
   }
-  border: 1px solid ${palette.red[7]};
+  border: 1px solid ${palette.indigo[10]};
   padding: 2rem;
   width: 360px;
-  background: white;
+  background: ${palette.red[0]};
 `;
 
 const AuthTemplate = ({ children }) => {
@@ -42,7 +48,9 @@ const AuthTemplate = ({ children }) => {
     <AuthTemplateBlock>
       <WhiteBox>
         <div className="logo-area">
-          <Link to="/">BLOG</Link>
+          <Link to="/">
+            &#123; <span>BLOG</span> &#125;
+          </Link>
         </div>
         {children}
       </WhiteBox>

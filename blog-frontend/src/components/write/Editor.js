@@ -9,26 +9,28 @@ const EditorBlock = styled(Responsive)`
   /* 페이지 위아래 여백 지정 */
   padding-top: 5rem;
   padding-bottom: 2rem;
-  border-bottom: 2px solid ${palette.red[7]};
+  border-bottom: 2px solid ${palette.indigo[10]};
 `;
 
 const TitleInput = styled.input`
-  color: ${palette.red[7]};
-  background-color: ${palette.orange[0]};
+  color: ${palette.indigo[10]};
+  background-color: ${palette.gray[0]};
   font-size: 2rem;
   outline: none;
   padding-bottom: 0.5rem;
   border: none;
-  border-bottom: 2px solid ${palette.red[7]};
+  border-bottom: 2px solid ${palette.indigo[10]};
   margin-bottom: 2rem;
   width: 100%;
+
   &::placeholder {
-    color: ${palette.gray[6]};
+    color: ${palette.orange[4]};
+    letter-spacing: 2px;
   }
 `;
 
 const QuillWrapper = styled.div`
-  color: ${palette.red[7]};
+  color: ${palette.indigo[10]};
   height: 350px;
 
   /* 최소 크기 지정 및 padding 제거 */
@@ -41,7 +43,8 @@ const QuillWrapper = styled.div`
 
   .ql-editor.ql-blank::before {
     left: 0px;
-    color: ${palette.gray[6]};
+    color: ${palette.orange[4]};
+    letter-spacing: 2px;
     font-style: normal;
   }
 

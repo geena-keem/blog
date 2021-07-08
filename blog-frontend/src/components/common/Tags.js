@@ -8,7 +8,7 @@ const TagsBlock = styled.div`
 
   .tag {
     display: inline-block;
-    color: ${palette.red[7]};
+    color: ${palette.orange[4]};
     text-decoration: none;
     margin-right: 0.5rem;
     &:hover {

@@ -9,7 +9,11 @@ const HeaderBlock = styled.div`
   position: fixed;
   top: 0;
   width: 100%;
-  background: ${palette.red[7]};
+  /* background: ${palette.red[0]}; */
+  background: ${palette.gray[0]};
+  /* border-bottom: 2px solid ${palette.orange[4]}; */
+  /* border-top: 2px solid ${palette.indigo[10]}; */
+  border-bottom: 2px solid ${palette.indigo[10]};
 `;
 
 // Responsive 컴포넌트의 속성에 스타일을 추가해서 새로운 컴포넌트 생성
@@ -17,16 +21,18 @@ const Wrapper = styled(Responsive)`
   height: 6rem;
   display: flex;
   align-items: center;
-
   justify-content: space-between;
 
   .logo {
-    color: ${palette.orange[1]};
+    color: ${palette.orange[4]};
     font-size: 1.5rem;
+    font-weight: 500;
     letter-spacing: 4px;
-    border-top: 1px solid ${palette.orange[1]};
-    border-bottom: 1px solid ${palette.orange[1]};
     padding: 4px 8px;
+
+    span {
+      color: ${palette.indigo[10]};
+    }
   }
 
   .right {
@@ -35,12 +41,12 @@ const Wrapper = styled(Responsive)`
   }
 
   .button {
-    color: ${palette.orange[1]};
-    background-color: ${palette.red[7]};
-    border: 1px solid ${palette.orange[1]};
+    color: ${palette.indigo[10]};
+    background-color: ${palette.orange[4]};
+    border: 1px solid ${palette.indigo[10]};
     &:hover {
-      color: ${palette.red[7]};
-      background-color: ${palette.orange[1]};
+      color: ${palette.orange[4]};
+      background-color: ${palette.indigo[10]};
     }
   }
 `;
@@ -52,7 +58,7 @@ const Spacer = styled.div`
 
 // 로그아웃 버튼
 const UserInfo = styled.div`
-  color: ${palette.orange[1]};
+  color: ${palette.indigo[10]};
   margin-right: 1rem;
 `;
 
@@ -62,7 +68,7 @@ const Header = ({ user, onLogout }) => {
       <HeaderBlock>
         <Wrapper>
           <Link to="/" className="logo">
-            BLOG
+            &#123; <span>BLOG</span> &#125;
           </Link>
           {user ? (
             <div className="right">

@@ -10,13 +10,13 @@ const SubInfoBlock = styled.div`
       margin-top: 1rem;
     `}
 
-  color: ${palette.red[7]};
+  color: ${palette.indigo[10]};
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 
   /* span 사이에 가운뎃점 문자 보여주기 */
   span + span:before {
-    color: ${palette.red[7]};
+    color: ${palette.red[10]};
     padding-left: 0.25rem;
     padding-right: 0.25rem;
     content: '\\B7'; /* 가운뎃점 문자 */

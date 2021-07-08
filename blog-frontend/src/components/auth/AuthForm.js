@@ -8,7 +8,7 @@ import Button from '../common/Button';
 
 const AuthFormBlock = styled.div`
   h4 {
-    color: ${palette.red[7]};
+    color: ${palette.indigo[10]};
     font-weight: normal;
     letter-spacing: 2px;
     margin-bottom: 1rem;
@@ -17,17 +17,24 @@ const AuthFormBlock = styled.div`
 
 // 스타일링된 input
 const StyledInput = styled.input`
-  color: ${palette.red[7]};
+  background: ${palette.red[0]};
+  color: ${palette.indigo[10]};
   font-size: 0.8rem;
   border: none;
-  border-bottom: 1px solid ${palette.red[7]};
+  border-bottom: 1px solid ${palette.indigo[10]};
   padding-bottom: 0.5rem;
   outline: none;
   width: 100%;
+
   &:focus {
-    color: ${palette.red[7]};
-    border-bottom: 1px solid ${palette.red[7]};
+    color: ${palette.indigo[10]};
+    border-bottom: 1px solid ${palette.indigo[10]};
   }
+
+  &::placeholder {
+    color: ${palette.orange[4]};
+  }
+
   & + & {
     margin-top: 1rem;
   }
@@ -38,7 +45,7 @@ const Footer = styled.div`
   margin-top: 2rem;
   text-align: right;
   a {
-    color: ${palette.red[7]};
+    color: ${palette.indigo[10]};
     letter-spacing: 2px;
     text-decoration: underline;
     /* &:hover {

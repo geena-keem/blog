@@ -18,18 +18,18 @@ const Fullscreen = styled.div`
 
 const AskModalBlock = styled.div`
   width: 320px;
-  background: white;
-  border: 1px solid ${palette.red[7]};
+  background: ${palette.red[0]};
+  border: 1px solid ${palette.indigo[10]};
   padding: 1.5rem;
 
   h2 {
-    color: ${palette.red[7]};
+    color: ${palette.indigo[10]};
     margin-top: 0;
     margin-bottom: 1rem;
   }
 
   p {
-    color: ${palette.red[7]};
+    color: ${palette.indigo[10]};
     margin-bottom: 3rem;
   }
 

@@ -10,12 +10,17 @@ import Tags from '../common/Tags';
 const PostListBlock = styled(Responsive)`
   margin-top: 3rem;
   margin-bottom: 3rem;
+
+  /* background-color: ${palette.red[0]}; */
+  /* border-top: 2px solid ${palette.orange[4]};
+  border-bottom: 2px solid ${palette.orange[4]}; */
 `;
 
 const WritePostButtonWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
 `;
 
 const PostItemBlock = styled.div`
@@ -28,11 +33,12 @@ const PostItemBlock = styled.div`
   }
 
   & + & {
-    border-top: 1px solid ${palette.red[7]};
+    border-top: 1px solid ${palette.orange[4]};
+    /* border-top: 1px solid ${palette.indigo[10]}; */
   }
 
   h2 {
-    color: ${palette.red[7]};
+    color: ${palette.indigo[10]};
     font-size: 2.5rem;
     margin-bottom: 1rem;
     margin-top: 0;
@@ -42,7 +48,7 @@ const PostItemBlock = styled.div`
   }
 
   p {
-    color: ${palette.red[7]};
+    color: ${palette.indigo[10]};
     margin-top: 2rem;
   }
 `;
@@ -61,7 +67,7 @@ const PostItem = ({ post }) => {
       />
       <Tags tags={tags} />
       <p>
-        <b>|</b> {body}
+        <b>&#123;</b> {body} <b>&#125;</b>
       </p>
     </PostItemBlock>
   );
@@ -77,7 +83,7 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
     <PostListBlock>
       <WritePostButtonWrapper>
         {showWriteButton && (
-          <Button orange to="/write">
+          <Button indigo to="/write">
             WRITE
           </Button>
         )}

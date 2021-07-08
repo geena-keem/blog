@@ -13,7 +13,7 @@ const PaginationBlock = styled.div`
 `;
 
 const PageNumber = styled.div`
-  color: ${palette.red[7]};
+  color: ${palette.indigo[10]};
 `;
 
 const buildLink = ({ username, tag, page }) => {

@@ -8,10 +8,16 @@ const TagBoxBlock = styled.div`
   padding-top: 1rem;
 
   p {
-    color: ${palette.red[7]};
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: ${palette.orange[4]};
     letter-spacing: 2px;
     margin-top: 0;
     margin-bottom: 1rem;
+
+    span {
+      color: ${palette.indigo[10]};
+    }
   }
 `;
 
@@ -19,7 +25,7 @@ const TagForm = styled.form`
   overflow: hidden;
   display: flex;
   width: 256px;
-  border: 1px solid ${palette.red[7]};
+  border: 1px solid ${palette.indigo[10]};
 
   input,
   button {
@@ -29,33 +35,34 @@ const TagForm = styled.form`
   }
 
   input {
-    color: ${palette.red[7]};
-    background: ${palette.orange[1]};
+    color: ${palette.indigo[10]};
+    background: ${palette.red[0]};
     padding: 0.5rem;
     flex: 1;
     min-width: 0;
     &::placeholder {
-      color: ${palette.gray[6]};
+      color: ${palette.orange[4]};
+      letter-spacing: 2px;
     }
   }
 
   button {
     color: ${palette.orange[1]};
-    background: ${palette.red[7]};
+    background: ${palette.indigo[10]};
     cursor: pointer;
     padding-right: 1rem;
     padding-left: 1rem;
-    border: 1px solid ${palette.orange[1]};
+    border: 1px solid ${palette.red[0]};
     &:hover {
-      color: ${palette.red[7]};
-      background: ${palette.orange[1]};
+      color: ${palette.indigo[10]};
+      background: ${palette.red[0]};
     }
   }
 `;
 
 const Tag = styled.div`
   margin-right: 0.5rem;
-  color: ${palette.red[7]};
+  color: ${palette.indigo[10]};
   cursor: pointer;
   &:hover {
     opacity: 0.5;
@@ -128,7 +135,9 @@ const TagBox = ({ tags, onChangeTags }) => {
 
   return (
     <TagBoxBlock>
-      <p>TAG</p>
+      <p>
+        &#123; <span>TAG</span> &#125;
+      </p>
       <TagForm onSubmit={onSubmit}>
         <input placeholder="TAG" value={input} onChange={onChange} />
         <button type="submit">ADD</button>

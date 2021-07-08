@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 import palette from '../../lib/styles/palette';
 
 const buttonStyle = css`
-  color: ${palette.red[7]};
-  border: 0.1rem solid ${palette.red[7]};
+  color: ${palette.indigo[10]};
+  border: 0.1rem solid ${palette.indigo[10]};
   padding: 0.25rem 1rem;
   cursor: pointer;
   letter-spacing: 2px;
 
-  background-color: ${palette.orange[1]};
+  background-color: ${palette.orange[4]};
   &:hover {
-    color: ${palette.orange[1]};
-    background: ${palette.red[7]};
+    color: ${palette.orange[4]};
+    background: ${palette.indigo[10]};
   }
 
   ${(props) =>
@@ -25,17 +25,16 @@ const buttonStyle = css`
     `}
 
   ${(props) =>
-    props.orange &&
+    props.indigo &&
     css`
-      background: ${palette.orange[1]};
+      background: ${palette.orange[4]};
       &:hover {
-        color: ${palette.orange[1]};
-        background: ${palette.red[7]};
+        background: ${palette.indigo[10]};
       }
     `}
   &:disabled {
-    background-color: ${palette.orange[1]};
-    color: ${palette.red[7]};
+    background-color: ${palette.orange[4]};
+    color: ${palette.indigo[10]};
     cursor: not-allowed;
   }
 `;
@@ -50,7 +49,7 @@ const StyledLink = styled(Link)`
 
 const Button = (props) => {
   return props.to ? (
-    <StyledLink {...props} orange={props.orange ? 1 : 0} />
+    <StyledLink {...props} indigo={props.indigo ? 1 : 0} />
   ) : (
     <StyledButton {...props} />
   );
