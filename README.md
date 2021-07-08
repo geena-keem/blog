@@ -1,3 +1,4 @@
+<br>
 <div align="center"><img src="imgs/blog-logo.png"></div>
 
 <img src="imgs/blog.png">
@@ -5,9 +6,10 @@
 **[Features]**
 
 ```
-- 회원가입 / 로그인
+- 회원가입 및 로그인, 로그아웃
 - 포스트 작성, 수정 및 삭제 기능
 - 블로그 포스트 목록 및 포스트를 읽는 기능
+- 페이지네이션 구현
 ```
 
 **[Technology]**
@@ -24,7 +26,7 @@ BACK-END
 - Node.js
 - Koa
 - MongoDB
-- JWT
+- JWT (JSON Web Token)
 - bcrypt
 ```
 
@@ -34,9 +36,12 @@ BACK-END
 
 ### > 포스트 수정 및 삭제
 
-**[Project structure - FRONTEND]**
+### > 페이지네이션
+
+**[Project structure]**
 
 ```
+FRONT-END
 .
 ├─ README.md
 ├─ jsconfig.json
@@ -46,7 +51,7 @@ BACK-END
 │  ├─ index.html
 │  └─ ...
 ├─ src
-│  ├─ components
+│  ├─ components                     UI
 │  │  ├─ auth
 │  │  │  ├─ AuthForm.js
 │  │  │  └─ AuthTemplate.js
@@ -70,7 +75,7 @@ BACK-END
 │  │     ├─ Editor.js
 │  │     ├─ TagBox.js
 │  │     └─ WriteActionButtons.js
-│  ├─ containers
+│  ├─ containers                     컨테이너 컴포넌트
 │  │  ├─ auth
 │  │  │  ├─ LoginForm.js
 │  │  │  └─ RegisterForm.js
@@ -88,12 +93,12 @@ BACK-END
 │  ├─ lib
 │  │  ├─ api
 │  │  │  ├─ auth.js
-│  │  │  ├─ client.js
+│  │  │  ├─ client.js                aixos
 │  │  │  └─ posts.js
-│  │  ├─ createRequestSaga.js
+│  │  ├─ createRequestSaga.js        리덕스사가
 │  │  └─ styles
 │  │     └─ palette.js
-│  ├─ modules
+│  ├─ modules                        리덕스 모듈
 │  │  ├─ auth.js
 │  │  ├─ index.js
 │  │  ├─ loading.js
@@ -101,7 +106,7 @@ BACK-END
 │  │  ├─ posts.js
 │  │  ├─ user.js
 │  │  └─ write.js
-│  ├─ pages
+│  ├─ pages                          라우트 컴포넌트
 │  │   ├─ LoginPage.js
 │  │   ├─ PostListPage.js
 │  │   ├─ PostPage.js
@@ -116,33 +121,46 @@ BACK-END
 │  ├─ reportWebVitals.js
 │  └─ setupTests.js
 │
-```
 
-**[Project structure - BACKEND]**
 
-```
+
+BACK-END
 .
 ├─ jsconfig.json
 ├─ package.json
 ├─ src
 │  ├─ api
-│  │  ├─ auth
+│  │  ├─ auth                     auth API
 │  │  │  ├─ auth.ctrl.js
 │  │  │  └─ index.js
-│  │  ├─ index.js
-│  │  └─ posts
+│  │  ├─ index.js                 라우트 모듈화
+│  │  └─ posts                    posts API
 │  │     ├─ index.js
 │  │     └─ posts.ctrl.js
 │  ├─ createFakeData.js
-│  ├─ index.js
-│  ├─ lib
+│  ├─ lib                         JWT
 │  │  ├─ checkLoggedIn.js
 │  │  └─ jwtMiddleware.js
-│  ├─ main.js
-│  └─ models
+│  ├─ index.js                    ES Module
+│  ├─ main.js                     Koa/mongoose/route
+│  └─ models                      User, Post 스키마/모델
 │     ├─ post.js
 │     └─ user.js
 │
+```
+
+**[Dependencies]**
+
+```
+FRONT-END
+
+
+
+
+BACK-END
+
+
+
 ```
 
 **[Reference]**
