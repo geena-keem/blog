@@ -18,7 +18,7 @@ const Fullscreen = styled.div`
 
 const AskModalBlock = styled.div`
   width: 320px;
-  background: ${palette.red[0]};
+  background: white;
   border: 1px solid ${palette.indigo[10]};
   padding: 1.5rem;
 

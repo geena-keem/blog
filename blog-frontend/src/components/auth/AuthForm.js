@@ -17,7 +17,7 @@ const AuthFormBlock = styled.div`
 
 // 스타일링된 input
 const StyledInput = styled.input`
-  background: ${palette.red[0]};
+  background: white;
   color: ${palette.indigo[10]};
   font-size: 0.8rem;
   border: none;

@@ -40,7 +40,7 @@ const WhiteBox = styled.div`
   border: 1px solid ${palette.indigo[10]};
   padding: 2rem;
   width: 360px;
-  background: ${palette.red[0]};
+  background: white;
 `;
 
 const AuthTemplate = ({ children }) => {
