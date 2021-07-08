@@ -1,7 +1,12 @@
 <br>
 <div align="center"><img src="README_imgs/blog-logo.png"></div>
 
+<br>
+
 <img src="README_imgs/blog.png">
+
+<br>
+<br>
 
 **[Features]**
 
@@ -30,13 +35,19 @@ BACK-END
 - bcrypt
 ```
 
-### > 회원가입 및 로그인
+<br>
+
+### > 회원가입 및 로그인, 로그아웃
+
+<img src="README_imgs/1.gif">
 
 ### > 포스트 작성
 
 ### > 포스트 수정 및 삭제
 
 ### > 페이지네이션
+
+<br>
 
 **[Project structure]**
 
@@ -95,7 +106,7 @@ FRONT-END
 │  │  │  ├─ auth.js
 │  │  │  ├─ client.js                aixos
 │  │  │  └─ posts.js
-│  │  ├─ createRequestSaga.js        리덕스사가
+│  │  ├─ createRequestSaga.js        리덕스 사가
 │  │  └─ styles
 │  │     └─ palette.js
 │  ├─ modules                        리덕스 모듈
@@ -141,8 +152,8 @@ BACK-END
 │  ├─ lib                         JWT
 │  │  ├─ checkLoggedIn.js
 │  │  └─ jwtMiddleware.js
-│  ├─ index.js                    ES Module
-│  ├─ main.js                     Koa/mongoose/route
+│  ├─ index.js                    ES 모듈
+│  ├─ main.js                     Koa / mongoose / route
 │  └─ models                      User, Post 스키마/모델
 │     ├─ post.js
 │     └─ user.js
