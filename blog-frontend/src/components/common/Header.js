@@ -56,7 +56,6 @@ const Spacer = styled.div`
   height: 5rem;
 `;
 
-// 로그아웃 버튼
 const UserInfo = styled.div`
   color: ${palette.indigo[10]};
   margin-right: 1rem;
