@@ -1,7 +1,7 @@
 <br>
-<div align="center"><img src="imgs/blog-logo.png"></div>
+<div align="center"><img src="README_imgs/blog-logo.png"></div>
 
-<img src="imgs/blog.png">
+<img src="README_imgs/blog.png">
 
 **[Features]**
 
@@ -154,13 +154,51 @@ BACK-END
 ```
 FRONT-END
 
+"dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.1",
+    "immer": "^9.0.3",
+    "qs": "^6.10.1",
+    "quill": "^1.3.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet-async": "^1.0.9",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.0",
+    "redux-actions": "^2.6.5",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-saga": "^1.1.3",
+    "styled-components": "^5.3.0",
+    "web-vitals": "^1.0.1"
+  },
+  "proxy": "http://localhost:4000/"
 
 
 
 BACK-END
 
-
-
+"dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "esm": "^3.2.25",
+    "joi": "^17.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0",
+    "mongoose": "^5.13.0",
+    "sanitize-html": "^2.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.29.0",
+    "nodemon": "^2.0.9"
+  },
 ```
 
 **[Reference]**
