@@ -13,7 +13,6 @@
 ```
 - 회원가입 및 로그인, 로그아웃
 - 포스트 작성, 수정 및 삭제 기능
-- 블로그 포스트 목록 및 포스트를 읽는 기능
 - 페이지네이션 구현
 ```
 
@@ -41,12 +40,28 @@ BACK-END
 
 <img src="README_imgs/1.gif">
 
+<br>
+<br>
+
 ### > 포스트 작성
+
+<img src="README_imgs/2.gif">
+
+<br>
+<br>
 
 ### > 포스트 수정 및 삭제
 
+<img src="README_imgs/3.gif">
+
+<br>
+<br>
+
 ### > 페이지네이션
 
+<img src="README_imgs/4.gif">
+
+<br>
 <br>
 
 **[Project structure]**
